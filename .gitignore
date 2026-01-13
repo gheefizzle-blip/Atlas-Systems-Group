@@ -8,3 +8,7 @@ bin/
 obj/
 .vscode/
 .idea/
+~$*.docx
+~$*.xlsx
+~$*.pptx
+*.lnk
