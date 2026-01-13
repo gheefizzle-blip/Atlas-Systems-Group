@@ -1,0 +1,22 @@
+# MCP-NAS Configuration
+application:
+  name: MCP-NAS
+  version: 1.0.0
+  phase: 18
+
+poller:
+  interval: 300
+  batch_mode: true
+  binary_support: true
+
+endpoints:
+  - name: write
+    path: /sftp/write
+  - name: read
+    path: /sftp/read
+  - name: delete
+    path: /sftp/delete
+
+metadata:
+  created: 2025-12-07T21:49:57.6639848-07:00
+  test_id: BATCH2_20251207_214956

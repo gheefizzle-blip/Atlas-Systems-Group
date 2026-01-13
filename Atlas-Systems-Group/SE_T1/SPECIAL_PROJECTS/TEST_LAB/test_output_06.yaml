@@ -1,0 +1,8 @@
+# YAML Test File
+generated: 20251207_204340
+source: multi-file-validation
+file_type: YAML
+items:
+  - alpha
+  - beta
+  - gamma

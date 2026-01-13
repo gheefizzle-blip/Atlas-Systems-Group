@@ -1,0 +1,25 @@
+{
+  "request_id": "REQ_20251202_TEST_DIRECT",
+  "timestamp": "2025-12-03T02:38:59.138Z",
+  "source_agent": "POWERSHELL_TEST",
+  "operation": "WRITE",
+  "target_path": "/SE_T1/SPECIAL_PROJECTS/TEST_LAB/direct_test.txt",
+  "content_type": "text",
+  "content_encoding": "utf8",
+  "content": "Direct test from PowerShell",
+  "priority": "NORMAL",
+  "policy": "NF-ICD-001",
+  "callback_url": null,
+  "meta": {},
+  "queued_at": "2025-12-03T02:38:59.138Z",
+  "status": "COMPLETED",
+  "completed_at": "2025-12-07T22:25:41.603Z",
+  "execution_result": {
+    "success": true,
+    "response_status": "ok",
+    "sha256": "86b0f9f84d926b8bddb867a92971d4ffa8acb7b62c1c5dfdeec1d438fbcdc5b3",
+    "continuity_entry": "CR_20251207_222541_COMMSIO_CMD",
+    "error": null,
+    "target_path_written": "/mnt/HD/HD_a2/SPEAR_MCP/SE_T1/SPECIAL_PROJECTS/TEST_LAB/direct_test.txt"
+  }
+}

@@ -1,0 +1,14 @@
+SHA256 Continuity Hash — Computed 2025-12-01T08:35:30Z
+Session: 20251201-A
+Controller: MCP Operations Controller (Tier-0)
+
+Files Included:
+- MCP_Agent_State.md
+- MCP_Agent_Queue.json
+- Session_Log_20251201.md
+- memory_registry.jsonl
+
+Hash (aggregate): 2a37ed5a8d6f7296e92c4c778aa78245dc9e7364d32e94cb6e5e5b8d3a83cfb9
+
+Continuity Entry: CR_20251201_083512_COMMSIO_CMD
+Verification: Tier-0 Integrity — VALID

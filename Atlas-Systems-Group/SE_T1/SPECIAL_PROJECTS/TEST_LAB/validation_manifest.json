@@ -1,0 +1,14 @@
+{
+  "manifest_id": "VAL_20251201_001",
+  "updated": "2025-12-01T05:22:20Z",
+  "tests": [
+    {
+      "id": "VAL_MD_001",
+      "file": "test_markdown.md",
+      "format": "markdown",
+      "result": "success",
+      "continuity_entry": "CR_20251201_051958_COMMSIO_CMD"
+    }
+  ],
+  "status": "in_progress"
+}

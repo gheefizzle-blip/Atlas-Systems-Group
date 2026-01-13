@@ -1,0 +1,60 @@
+{
+  "doc_id": "SE-T1-AGENT-ROSTER-019",
+  "revision": "A",
+  "status": "WORKING",
+  "effective_utc": "2026-01-07T08:10:00Z",
+  "scope": "TIER1",
+  "rules": {
+    "no_anonymous_execution": true,
+    "identity_precedes_intelligence": true,
+    "writes_require_human_approval_in_phase19": true,
+    "deny_on_missing_agent_id": true,
+    "deny_on_unknown_agent_id": true,
+    "deny_on_out_of_scope_path": true
+  },
+  "agents": [
+    {
+      "agent_id": "PHASE19-BOOTSTRAP",
+      "type": "bootstrap",
+      "enabled": true,
+      "write_scope": [
+        "Z:\\SE_T1\\SPECIAL_PROJECTS\\TEST_LAB\\",
+        "Z:\\SE_T1\\QUEUE\\"
+      ],
+      "allowed_actions": ["LIST", "READ", "WRITE", "CHECK_QUEUE"],
+      "notes": "Temporary commissioning identity for Phase 19 only. Disable at Phase 19 closeout."
+    },
+    {
+      "agent_id": "CHATGPT-DIGITAL-TWIN",
+      "type": "advisory",
+      "enabled": true,
+      "write_scope": [],
+      "allowed_actions": ["ADVISE"],
+      "notes": "Planning/drafting only. No autonomous writes. Not a system principal."
+    },
+    {
+      "agent_id": "CODEX-CLI",
+      "type": "tooling",
+      "enabled": true,
+      "write_scope": [],
+      "allowed_actions": ["GENERATE_SCRIPTS"],
+      "notes": "Toolsmith only. Execution only by operator command under Windows identity."
+    },
+    {
+      "agent_id": "AGENT-A-PROPOSER",
+      "type": "proposer",
+      "enabled": true,
+      "write_scope": [],
+      "allowed_actions": ["PROPOSE", "DRAFT"],
+      "notes": "Agent A role per JOA-001. No autonomous writes."
+    },
+    {
+      "agent_id": "AGENT-B-VALIDATOR",
+      "type": "validator",
+      "enabled": true,
+      "write_scope": [],
+      "allowed_actions": ["VALIDATE", "AUDIT"],
+      "notes": "Agent B role per D-AVP-001. No autonomous writes."
+    }
+  ]
+}

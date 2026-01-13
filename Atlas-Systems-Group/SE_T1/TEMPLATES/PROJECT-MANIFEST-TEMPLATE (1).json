@@ -1,0 +1,149 @@
+{
+  "_template_instructions": "Replace all [BRACKETED] values. Delete this _template_instructions field before use.",
+  
+  "manifest_id": "[PROJECT_ID]-MANIFEST-001",
+  "manifest_version": "1.0.0",
+  "schema_version": "1.0",
+  "effective_date": "[YYYY-MM-DD]",
+  "last_updated": "[YYYY-MM-DD]",
+  "project_id": "[PROJECT_ID]",
+  "project_name": "[FULL_PROJECT_NAME]",
+  
+  "governance_files": {
+    "context_anchor": {
+      "doc_id": "[PROJECT_ID]-CTX-001",
+      "path": "/[PROJECT_ID]/Governance/[PROJECT_ID]-CTX-001.md",
+      "version": "1.0",
+      "sha256": "[FULL_64_CHAR_HASH]",
+      "last_updated": "[YYYY-MM-DD]"
+    },
+    "project_reference_index": {
+      "doc_id": "[PROJECT_ID]-PRI-001",
+      "path": "/[PROJECT_ID]/Governance/[PROJECT_ID]-PRI-001.md",
+      "version": "1.0",
+      "sha256": "[FULL_64_CHAR_HASH]",
+      "last_updated": "[YYYY-MM-DD]"
+    },
+    "master_guideline_document": {
+      "doc_id": "[PROJECT_ID]-MGD-001",
+      "path": "/[PROJECT_ID]/Governance/[PROJECT_ID]-MGD-001.docx",
+      "version": "A",
+      "sha256": "[FULL_64_CHAR_HASH]",
+      "last_updated": "[YYYY-MM-DD]"
+    }
+  },
+  
+  "active_phase": "[PHASE_NUMBER]",
+  "engineering_maturity": "[CONCEPT|FEED|DETAILED|CONSTRUCTION]",
+  
+  "last_wo_applied": {
+    "wo_id": "[WO-YYYY-NNNN]",
+    "completion_date": "[YYYY-MM-DD]",
+    "summary": "[BRIEF_DESCRIPTION]"
+  },
+  
+  "last_dep_certified": {
+    "dep_id": "[DEP-YYYY-NNNN]",
+    "certification_date": "[YYYY-MM-DD]",
+    "summary": "[BRIEF_DESCRIPTION]"
+  },
+  
+  "subsystems": {
+    "[SUBSYSTEM_1_KEY]": {
+      "name": "[SUBSYSTEM_1_NAME]",
+      "status": "[CONCEPT|FEED|DETAILED|COMPLETE]",
+      "canonical_doc": {
+        "doc_id": "[DOC_ID]",
+        "path": "/[PROJECT_ID]/[SUBSYSTEM_1]/[DOC_ID].docx",
+        "sha256": "[FULL_64_CHAR_HASH]",
+        "last_updated": "[YYYY-MM-DD]"
+      },
+      "supporting_docs": [
+        {
+          "doc_id": "[DOC_ID]",
+          "path": "/[PROJECT_ID]/[SUBSYSTEM_1]/[DOC_ID].pdf",
+          "sha256": "[FULL_64_CHAR_HASH]"
+        }
+      ],
+      "open_items_count": 0
+    },
+    "[SUBSYSTEM_2_KEY]": {
+      "name": "[SUBSYSTEM_2_NAME]",
+      "status": "[CONCEPT|FEED|DETAILED|COMPLETE]",
+      "canonical_doc": {
+        "doc_id": "[DOC_ID]",
+        "path": "/[PROJECT_ID]/[SUBSYSTEM_2]/[DOC_ID].docx",
+        "sha256": "[FULL_64_CHAR_HASH]",
+        "last_updated": "[YYYY-MM-DD]"
+      },
+      "supporting_docs": [],
+      "open_items_count": 0
+    }
+  },
+  
+  "interfaces": [
+    {
+      "interface_id": "[ICD_ID]",
+      "from_subsystem": "[SUBSYSTEM_KEY]",
+      "to_subsystem": "[SUBSYSTEM_KEY]",
+      "status": "[DRAFT|ACTIVE]",
+      "path": "/[PROJECT_ID]/Interfaces/[ICD_ID].docx",
+      "sha256": "[FULL_64_CHAR_HASH]"
+    }
+  ],
+  
+  "compliance_domains": [
+    {
+      "domain": "[DOMAIN_NAME]",
+      "standards": ["[STANDARD_1]", "[STANDARD_2]"],
+      "validator": "[AGENT_ID|HUMAN]"
+    }
+  ],
+  
+  "deprecated_artifacts": [
+    {
+      "doc_id": "[OLD_DOC_ID]",
+      "superseded_by": "[NEW_DOC_ID]",
+      "deprecation_date": "[YYYY-MM-DD]",
+      "reason": "[REASON]"
+    }
+  ],
+  
+  "validation_config": {
+    "agent_b_validates_all_diffs": true,
+    "agent_r_required_for_security": true,
+    "reasoning_hash_required_for_production_numbers": true,
+    "continuity_code_required": true,
+    "sha256_verification_required": true
+  },
+  
+  "indexer_config": {
+    "auto_update_triggers": [
+      "wo_closure",
+      "dep_certification",
+      "artifact_publish"
+    ],
+    "autonomy_level": 1,
+    "max_batch_size": 10,
+    "requires_agent_b_approval": true
+  },
+  
+  "router_config": {
+    "context_packet_includes": [
+      "context_anchor",
+      "project_reference_index"
+    ],
+    "verify_hashes_before_assembly": true,
+    "reject_blind_work_orders": true
+  },
+  
+  "change_log": [
+    {
+      "version": "1.0.0",
+      "date": "[YYYY-MM-DD]",
+      "change": "Initial manifest creation",
+      "trigger": "manual",
+      "validated_by": "[COMMANDER|AGENT_B]"
+    }
+  ]
+}

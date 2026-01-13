@@ -1,0 +1,23 @@
+{
+  "endpoints": {
+    "delete": "/sftp/delete",
+    "read": "/sftp/read",
+    "write": "/sftp/write"
+  },
+  "settings": {
+    "batch_size": 0,
+    "binary_support": true,
+    "polling_interval": 300,
+    "encodings": [
+      "utf8",
+      "base64"
+    ]
+  },
+  "application": "MCP-NAS",
+  "metadata": {
+    "test_id": "BATCH2_20251207_214956",
+    "created": "2025-12-07T21:49:57.1578736-07:00"
+  },
+  "version": "1.0.0",
+  "phase": 18
+}

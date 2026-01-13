@@ -1,0 +1,4 @@
+id,name,value,timestamp,file_type
+1,test_alpha,100,20251207_204340,CSV
+2,test_beta,200,20251207_204340,CSV
+3,test_gamma,300,20251207_204340,CSV

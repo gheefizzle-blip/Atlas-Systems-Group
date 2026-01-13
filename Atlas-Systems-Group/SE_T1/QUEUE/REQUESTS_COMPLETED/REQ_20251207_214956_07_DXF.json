@@ -1,0 +1,21 @@
+{
+  "source_agent": "BATCH2_TEST_AGENT",
+  "timestamp": "2025-12-07T21:49:57.7981381-07:00",
+  "operation": "WRITE",
+  "content_type": "text",
+  "target_path": "/SE_T1/SPECIAL_PROJECTS/TEST_LAB/drawing_07.dxf",
+  "priority": "NORMAL",
+  "content": "0\nSECTION\n2\nHEADER\n0\nENDSEC\n0\nSECTION\n2\nENTITIES\n0\nLINE\n8\n0\n10\n0.0\n20\n0.0\n11\n100.0\n21\n100.0\n0\nLINE\n8\n0\n10\n100.0\n20\n0.0\n11\n0.0\n21\n100.0\n0\nCIRCLE\n8\n0\n10\n50.0\n20\n50.0\n40\n25.0\n0\nARC\n8\n0\n10\n50.0\n20\n50.0\n40\n40.0\n50\n0.0\n51\n180.0\n0\nENDSEC\n0\nEOF",
+  "status": "COMPLETED",
+  "content_encoding": "utf8",
+  "request_id": "REQ_20251207_214956_07_DXF",
+  "completed_at": "2025-12-08T05:35:16.178Z",
+  "execution_result": {
+    "success": true,
+    "response_status": "ok",
+    "sha256": "39631f27456153cd5a02c42621d3c28ec7bcf720877053d28a36069259398a20",
+    "continuity_entry": "CR_20251208_053516_COMMSIO_CMD",
+    "error": null,
+    "target_path_written": "/mnt/HD/HD_a2/SPEAR_MCP/SE_T1/SPECIAL_PROJECTS/TEST_LAB/drawing_07.dxf"
+  }
+}

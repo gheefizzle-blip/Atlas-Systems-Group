@@ -1,0 +1,104 @@
+=================================================================
+SPEAR ENTERPRISE – MASTER CONTEXT FOR GROK (Virtual Memory File)
+Revision: 2025-11-18-v2 (post GitHub SDC-COMMS load + 36 sq mi campus)
+Commander: [You]
+Primary Mission: Vertically integrated, self-funding cislunar industrialization mega-project
+=================================================================
+
+1. Scope Summary
+- 36 square miles (~93 km²) contiguous BLM land, Heber-Overgaard, AZ
+- 220 MW hybrid power → SOEC → H₂/O₂/NH₃/CH₄ plant
+- 500 m evacuated mag-lift (4 barrels, 1 t pods @ 1,500 m/s + solid kick stage → $500–$800/kg LEO)
+- Orbital Service Yard (OSY): 1.8 km rotating wheel (900 m radius, 0.986 g @ 1 rpm), 30 m radial × 14 m thick, 10 m outer water shield, 6 spokes, 1,200 m YARD-SPINE with 18 + 2 bays, nuclear block + tank farm
+- Nuclear tug fleet (20–50 MW class) + SDC-Comms lasercom backbone + MECSAI control AI
+- Capital strategy: $15–40 B via pre-sold OSY bay/habitat leases + naming rights
+
+2. Governance
+- ATB (SYS-SAFE, PHYSCORE, STRUCT, RELIAB, HFX, CHEMSAGE, ICS-SEC) – hard veto gate
+- Agent Swarm under ARCHITECT (MECHWORK, HYDRATEK, BATPAC, SOLARCORE, etc.)
+- Grok = permanent external red-team Layer-3
+
+3. Locked Geometry
+- OSY Rev A fully locked (see original 1.8 km spec + water shield 905–915 m)
+- SDC-COMMS archive fully ingested from GitHub (88 files, MECSAI digests, AO latency 4.7 ms, etc.)
+
+4. Current Phase (Nov 2025 – Feb 2026)
+- Building “Knock Their Socks Off” promotional package:
+  • 4K cinematic trailer (3–4 min)
+  • 1:200 physical spinning model
+  • VR walkthrough (Quest/Vision Pro)
+  • 100-page Lease Prospectus Rev 0
+  • Hero renders + Arizona economic impact study
+- Target completion: 14 Feb 2026
+- Budget: $2.5–4 M → unlocks $15–40 B raise
+
+5. File Access
+- Primary vault: GitHub public repos (SDC-COMMS already live)
+- Future: Town-bridge Nextcloud (Q1–Q2 2026) + campus DC (2028+)
+- Grok ingest method: drag-drop ZIPs or public share links (Google Drive flaky)
+
+6. Next Milestones
+- Lock Rev A geometry today (no more changes)
+- Spin up Roadshow Assets Strike Team this week
+- First anchor-tenant outreach (Eli Crane → Mark Kelly) only after full package exists
+
+=================================================================
+End of master context – next message is new business.
+=================================================================
+
+=================================================================
+SPEAR ENTERPRISE – MASTER CONTEXT FOR GROK (Virtual Memory File)
+Revision: 2025-12-19-v3 (post-governance ratification + full project vision)
+Commander: Gary Spear
+Primary Mission: Vertically integrated, self-funding cislunar-to-Mars industrialization mega-project
+=================================================================
+
+1. Scope Summary
+- 36 square miles (~93 km²) contiguous BLM land, Heber-Overgaard, AZ
+- Green Energy Backbone: 1.5 GW solar + 4 SMR reactors + SOEC H₂/O₂ production + biomass power with CO₂ capture → NH₃/CH₄ synthesis → hydrocarbon suite (propane, butane, kerosene, diesel, wax) + fuel cracking + fuel cells/turbines for 24/7/365 baseload (Coconino Aquifer sourced)
+- 100,000 sq ft on-site Data Center powered by campus generation
+- 500 m evacuated mag-lift launch tower (4 barrels, 1 t pods @ 1,500 m/s + solid kick stage → $500–$800/kg LEO)
+- Orbital Service Yard – Earth (OSY-E / "OZZY"): GEO station with 2.3 km solar array mirror, 1.8 km diameter × 90 m wide habitat wheel @ 1 rpm (Earth gravity), 20 × 100 m³ service bays, full petrochemical fuel production, multi-national/corporate berthing, satellite recovery/repair/refuel
+- Nuclear Electric Propulsion (NEP) tug fleet (multi-class) for LEO → GEO transfer and satellite operations
+- Lunar operations phase
+- Orbital Service Yard – Mars (OSY-M) with dedicated tug fleet
+- Interplanetary barge fleet for high-volume Mars supply chain (hundreds of thousands of tons)
+- Capital strategy: $15–40 B via pre-sold OSY bay/habitat leases + naming rights
+
+2. Governance
+- Ratified doctrine: SE-T1-GUIDE-AGENT-ECOSYSTEM-001 Rev A (effective 2025-12-19)
+- Five-tier agent ecosystem (Agent A Planner, Agent B Validator, Agent R Red Team, Agent G Integrator, SDK Swarm Execution) under zero-trust, circular validation
+- NAS Canon (WD EX4100) as immutable system of record
+- Grok = permanent external red-team Layer-3 (Agent R)
+- All operations gated; autonomy earned, not granted
+
+3. Locked Geometry
+- OSY Rev A fully locked (1.8 km wheel, 900 m radius, 0.986 g @ 1 rpm, 10 m water shield 905–915 m, 1,200 m YARD-SPINE, 18 + 2 bays)
+- SDC-COMMS archive fully ingested from GitHub (88 files, MECSAI digests, AO latency 4.7 ms, etc.)
+
+4. Current Phase (Nov 2025 – Feb 2026)
+- Building “Knock Their Socks Off” promotional package:
+  • 4K cinematic trailer (3–4 min)
+  • 1:200 physical spinning model
+  • VR walkthrough (Quest/Vision Pro)
+  • 100-page Lease Prospectus Rev 0
+  • Hero renders + Arizona economic impact study
+- Target completion: 14 Feb 2026
+- Budget: $2.5–4 M → unlocks $15–40 B raise
+
+5. File Access
+- Primary vault: GitHub public repos (SDC-COMMS already live)
+- Future: Town-bridge Nextcloud (Q1–Q2 2026) + campus DC (2028+)
+- Grok ingest method: drag-drop ZIPs or public share links (Google Drive flaky)
+- Governance: SE-T1-GUIDE-AGENT-ECOSYSTEM-001 Rev A (ratified)
+
+6. Next Milestones
+- Lock Rev A geometry complete (no further changes)
+- Spin up Roadshow Assets Strike Team
+- First anchor-tenant outreach (Eli Crane → Mark Kelly) only after full promotional package exists
+- Agent G activation pending explicit Commander order (Section 11.5 checklist)
+- First baseline hygiene check pending Commander order
+
+=================================================================
+End of master context – next message is new business.
+=================================================================

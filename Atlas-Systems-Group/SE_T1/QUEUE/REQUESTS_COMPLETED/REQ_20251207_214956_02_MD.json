@@ -1,0 +1,21 @@
+{
+  "source_agent": "BATCH2_TEST_AGENT",
+  "timestamp": "2025-12-07T21:49:56.9773507-07:00",
+  "operation": "WRITE",
+  "content_type": "text",
+  "target_path": "/SE_T1/SPECIAL_PROJECTS/TEST_LAB/notes_02.md",
+  "priority": "NORMAL",
+  "content": "# Batch Test Notes\n\n## Overview\nThis markdown file tests the queue processing system.\n\n## Features Tested\n- **Text encoding**: UTF-8\n- **File creation**: Via SFTP write\n- **Archival**: Move to COMPLETED folder\n\n## Checklist\n- [ ] File created on NAS\n- [ ] Request archived\n- [ ] Continuity logged\n\n*Generated: 12/07/2025 21:49:56*",
+  "status": "COMPLETED",
+  "content_encoding": "utf8",
+  "request_id": "REQ_20251207_214956_02_MD",
+  "completed_at": "2025-12-08T04:55:21.444Z",
+  "execution_result": {
+    "success": true,
+    "response_status": "ok",
+    "sha256": "b20f45b6fcdf762ff8bdeade5f97ee323e0b06f8c88fd5649e79c5e332f8626d",
+    "continuity_entry": "CR_20251208_045521_COMMSIO_CMD",
+    "error": null,
+    "target_path_written": "/mnt/HD/HD_a2/SPEAR_MCP/SE_T1/SPECIAL_PROJECTS/TEST_LAB/notes_02.md"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "source_agent": "BATCH2_TEST_AGENT",
+  "timestamp": "2025-12-07T21:49:57.3242713-07:00",
+  "operation": "WRITE",
+  "content_type": "text",
+  "target_path": "/SE_T1/SPECIAL_PROJECTS/TEST_LAB/data_04.csv",
+  "priority": "NORMAL",
+  "content": "id,name,value,timestamp,status\n1,Alpha,100.5,2025-12-07T10:00:00Z,active\n2,Beta,250.3,2025-12-07T10:05:00Z,active\n3,Gamma,75.8,2025-12-07T10:10:00Z,pending\n4,Delta,320.1,2025-12-07T10:15:00Z,active\n5,Epsilon,180.9,2025-12-07T10:20:00Z,complete\n6,Zeta,95.2,2025-12-07T10:25:00Z,active\n7,Eta,410.7,2025-12-07T10:30:00Z,pending\n8,Theta,55.4,2025-12-07T10:35:00Z,active\n9,Iota,290.0,2025-12-07T10:40:00Z,complete\n10,Kappa,145.6,2025-12-07T10:45:00Z,active",
+  "status": "COMPLETED",
+  "content_encoding": "utf8",
+  "request_id": "REQ_20251207_214956_04_CSV",
+  "completed_at": "2025-12-08T05:35:16.171Z",
+  "execution_result": {
+    "success": true,
+    "response_status": "ok",
+    "sha256": "204e0a433818b1f4c2deef79e3557540796c945a3a8d1a3db2470b7a3c4727d9",
+    "continuity_entry": "CR_20251208_053516_COMMSIO_CMD",
+    "error": null,
+    "target_path_written": "/mnt/HD/HD_a2/SPEAR_MCP/SE_T1/SPECIAL_PROJECTS/TEST_LAB/data_04.csv"
+  }
+}

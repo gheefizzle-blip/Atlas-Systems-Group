@@ -1,0 +1,13 @@
+{
+  "test": "direct SFTP write",
+  "timestamp": "2025-12-08 00:11:06",
+  "status": "FAILED",
+  "completed_at": "2025-12-08T07:15:13.224Z",
+  "execution_result": {
+    "success": false,
+    "response_status": "error",
+    "sha256": null,
+    "continuity_entry": null,
+    "error": "Unsupported operation: . Valid operations: LIST, READ, WRITE, MKDIR, STATE, QUEUE, DELETE"
+  }
+}

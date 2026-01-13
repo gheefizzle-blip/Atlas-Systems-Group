@@ -1,0 +1,178 @@
+SE-N8N-FUNCTION-NODES-PSEUDOCODE-001
+Rev: A
+Date: 2026-01-05
+
+Purpose:
+- Provide implementation guidance for n8n Function nodes used in the project onboarding workflow.
+- ASCII only. Language-agnostic pseudocode.
+
+----------------------------------------------------------------------
+1) Node 2: Validate project_id vs client_slug and normalize to PROJECT_INTAKE
+----------------------------------------------------------------------
+
+INPUT: intake_raw (string or object)
+OUTPUT: intake_normalized (object matching PROJECT_INTAKE schema)
+
+PSEUDOCODE:
+
+function to_upper_slug(s):
+  return UPPERCASE(TRIM(s)).REPLACE(" ", "_").REPLACE("-", "_").REPLACE("__", "_").REPLACE("_", ""?)  # choose your slug policy
+
+function parse_intake(intake_raw):
+  if intake_raw is object:
+    return intake_raw
+  else:
+    # if markdown, parse with simple rules:
+    # - look for lines like "Project ID:", "Client:", "Project Name:", etc.
+    # - fallback: treat entire text as scope_summary
+    obj = {}
+    obj.scope_summary = intake_raw
+    return obj
+
+obj = parse_intake(intake_raw)
+
+# Required fields sanity
+assert obj.project_id exists
+assert obj.client_slug exists
+assert obj.project_name exists
+assert obj.engagement_type exists
+assert obj.classification exists
+
+# Enforce format
+assert REGEX_MATCH(obj.project_id, "^PRJ-[A-Z0-9]+-[0-9]{4}-[0-9]{4}$")
+
+client_slug = to_upper_slug(obj.client_slug)
+
+# Extract slug from project_id: "PRJ-<SLUG>-YYYY-NNNN"
+parts = SPLIT(obj.project_id, "-")
+# parts[0]=PRJ, parts[1]=slug, parts[2]=YYYY, parts[3]=NNNN
+slug_in_id = parts[1]
+
+assert client_slug == slug_in_id
+
+# Normalize classification
+assert obj.classification.risk_class in {LOW,MEDIUM,HIGH,CRITICAL}
+assert obj.classification.data_sensitivity in {PUBLIC,INTERNAL,CONFIDENTIAL,RESTRICTED}
+assert obj.classification.client_audit_rights in {YES,NO}
+assert obj.classification.regulatory_domains exists and LENGTH >= 1
+
+# Provide defaults
+if obj.db_mode missing:
+  obj.db_mode = { type: "SCHEMA_PER_PROJECT", postgres_instance: "pg-main-01" }
+if obj.options missing:
+  obj.options = { initial_retention_policy: "STANDARD", tags: [] }
+
+# Final normalized object
+intake_normalized = {
+  project_id: obj.project_id,
+  client_slug: client_slug,
+  project_name: obj.project_name,
+  engagement_type: obj.engagement_type,
+  scope_summary: obj.scope_summary (optional),
+  classification: obj.classification,
+  db_mode: obj.db_mode,
+  options: obj.options
+}
+
+return intake_normalized
+
+----------------------------------------------------------------------
+2) Node 6: Construct PROJECT_PROVISION request from intake + approvals
+----------------------------------------------------------------------
+
+INPUT:
+- intake_normalized (PROJECT_INTAKE)
+- approvals: commander_approved (bool), agent_b_ok (bool), agent_r_ok (bool)
+OUTPUT:
+- provision_request (object matching PROJECT_PROVISION_REQUEST schema)
+
+PSEUDOCODE:
+
+assert commander_approved == true
+assert agent_b_ok == true
+
+risk = intake_normalized.classification.risk_class
+if risk in {HIGH,CRITICAL}:
+  assert agent_r_ok == true
+  validated_by_agent_r = true
+else:
+  validated_by_agent_r = (agent_r_ok == true) ? true : false  # optional
+
+request_id = "REQ-" + YYYYMMDD() + "-" + RANDOM4()
+
+provision_request = {
+  request_id: request_id,
+  requested_by: "Commander",
+  project_id: intake_normalized.project_id,
+  client_slug: intake_normalized.client_slug,
+  project_name: intake_normalized.project_name,
+  engagement_type: intake_normalized.engagement_type,
+  classification: intake_normalized.classification,
+  db_mode: intake_normalized.db_mode,
+
+  template_set: {
+    ctx_template_path: "\\NAS\\Spear_MCP\\SE_T1\\TEMPLATES\\PROJECT-CTX-TEMPLATE.md",
+    pri_template_path: "\\NAS\\Spear_MCP\\SE_T1\\TEMPLATES\\PROJECT-PRI-TEMPLATE.md",
+    manifest_template_path: "\\NAS\\Spear_MCP\\SE_T1\\TEMPLATES\\PROJECT-MANIFEST-TEMPLATE.json"
+  },
+
+  nas_roots: {
+    platform_root: "\\NAS\\Spear_MCP\\SE_T1",
+    projects_root: "\\NAS\\SE_PROJECTS"
+  },
+
+  options: {
+    create_project_role: true,
+    enable_indexer: true,
+    initial_retention_policy: (intake_normalized.options.initial_retention_policy or "STANDARD"),
+    tags: (intake_normalized.options.tags or []),
+    validated_by_agent_r: validated_by_agent_r
+  }
+}
+
+return provision_request
+
+----------------------------------------------------------------------
+3) Node 8: Verify Router PROJECT_PROVISION response before emitting PROJECT_READY
+----------------------------------------------------------------------
+
+INPUT: router_response (PROJECT_PROVISION_RESPONSE)
+OUTPUT: project_ready_event (PROJECT_READY_EVENT)
+
+PSEUDOCODE:
+
+assert router_response.status == "OK"
+assert router_response.project_root exists
+assert router_response.governance.ctx_sha256 exists
+assert router_response.governance.pri_sha256 exists
+assert router_response.governance.manifest_sha256 exists
+assert router_response.db.schema_or_db_name exists
+assert router_response.event_id exists
+
+event = {
+  event_type: "PROJECT_READY",
+  timestamp: ISO8601_NOW(),
+  project_id: router_response.project_id,
+  client_slug: router_response.client_slug,
+  project_root: router_response.project_root,
+  classification: intake_normalized.classification,  # carry forward from Node 2
+  governance: {
+    ctx: { path: router_response.governance.ctx_path, sha256: router_response.governance.ctx_sha256, version: router_response.governance.ctx_version },
+    pri: { path: router_response.governance.pri_path, sha256: router_response.governance.pri_sha256, version: router_response.governance.pri_version },
+    manifest: { path: router_response.governance.manifest_path, sha256: router_response.governance.manifest_sha256, version: router_response.governance.manifest_version }
+  },
+  db: {
+    mode: router_response.db.mode,
+    postgres_instance: router_response.db.postgres_instance,
+    schema_or_db_name: router_response.db.schema_or_db_name
+  },
+  integrator_action: "INIT_BASELINE_AUDIT"
+}
+
+return event
+
+----------------------------------------------------------------------
+Notes:
+- Keep all normalization logic in Node 2 so downstream nodes are deterministic.
+- Do not trust user-provided paths; always use Router-configured roots and template paths.
+- If you implement Agent B's observation later (Rev B), extend PROJECT_READY with provisioning_metadata.

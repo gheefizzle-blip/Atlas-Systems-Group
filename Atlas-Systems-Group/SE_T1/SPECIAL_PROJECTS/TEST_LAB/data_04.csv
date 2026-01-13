@@ -1,0 +1,11 @@
+id,name,value,timestamp,status
+1,Alpha,100.5,2025-12-07T10:00:00Z,active
+2,Beta,250.3,2025-12-07T10:05:00Z,active
+3,Gamma,75.8,2025-12-07T10:10:00Z,pending
+4,Delta,320.1,2025-12-07T10:15:00Z,active
+5,Epsilon,180.9,2025-12-07T10:20:00Z,complete
+6,Zeta,95.2,2025-12-07T10:25:00Z,active
+7,Eta,410.7,2025-12-07T10:30:00Z,pending
+8,Theta,55.4,2025-12-07T10:35:00Z,active
+9,Iota,290.0,2025-12-07T10:40:00Z,complete
+10,Kappa,145.6,2025-12-07T10:45:00Z,active

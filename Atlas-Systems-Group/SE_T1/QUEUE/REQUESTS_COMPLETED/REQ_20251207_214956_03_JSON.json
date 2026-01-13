@@ -1,0 +1,21 @@
+{
+  "source_agent": "BATCH2_TEST_AGENT",
+  "timestamp": "2025-12-07T21:49:57.1940437-07:00",
+  "operation": "WRITE",
+  "content_type": "text",
+  "target_path": "/SE_T1/SPECIAL_PROJECTS/TEST_LAB/config_03.json",
+  "priority": "NORMAL",
+  "content": "{\r\n  \"endpoints\": {\r\n    \"delete\": \"/sftp/delete\",\r\n    \"read\": \"/sftp/read\",\r\n    \"write\": \"/sftp/write\"\r\n  },\r\n  \"settings\": {\r\n    \"batch_size\": 0,\r\n    \"binary_support\": true,\r\n    \"polling_interval\": 300,\r\n    \"encodings\": [\r\n      \"utf8\",\r\n      \"base64\"\r\n    ]\r\n  },\r\n  \"application\": \"MCP-NAS\",\r\n  \"metadata\": {\r\n    \"test_id\": \"BATCH2_20251207_214956\",\r\n    \"created\": \"2025-12-07T21:49:57.1578736-07:00\"\r\n  },\r\n  \"version\": \"1.0.0\",\r\n  \"phase\": 18\r\n}",
+  "status": "COMPLETED",
+  "content_encoding": "utf8",
+  "request_id": "REQ_20251207_214956_03_JSON",
+  "completed_at": "2025-12-08T05:00:20.906Z",
+  "execution_result": {
+    "success": true,
+    "response_status": "ok",
+    "sha256": "d8d8851ab6f4a617a5ae4f3a2fb2d2d381c4f7df0f3530b69c271ab8868649b6",
+    "continuity_entry": "CR_20251208_050020_COMMSIO_CMD",
+    "error": null,
+    "target_path_written": "/mnt/HD/HD_a2/SPEAR_MCP/SE_T1/SPECIAL_PROJECTS/TEST_LAB/config_03.json"
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "SE/SCHEMA/PROJECT_READY_EVENT/001",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_type",
+    "timestamp",
+    "project_id",
+    "client_slug",
+    "project_root",
+    "classification",
+    "governance",
+    "db"
+  ],
+  "properties": {
+    "event_type": {
+      "type": "string",
+      "const": "PROJECT_READY"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "client_slug": {
+      "type": "string"
+    },
+    "project_root": {
+      "type": "string"
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "risk_class",
+        "data_sensitivity",
+        "regulatory_domains",
+        "client_audit_rights"
+      ],
+      "properties": {
+        "risk_class": {
+          "type": "string"
+        },
+        "data_sensitivity": {
+          "type": "string"
+        },
+        "regulatory_domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "client_audit_rights": {
+          "type": "string"
+        }
+      }
+    },
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ctx",
+        "pri",
+        "manifest"
+      ],
+      "properties": {
+        "ctx": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "sha256",
+            "version"
+          ],
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "sha256": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          }
+        },
+        "pri": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "sha256",
+            "version"
+          ],
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "sha256": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          }
+        },
+        "manifest": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "sha256",
+            "version"
+          ],
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "sha256": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "db": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "postgres_instance",
+        "schema_or_db_name"
+      ],
+      "properties": {
+        "mode": {
+          "type": "string"
+        },
+        "postgres_instance": {
+          "type": "string"
+        },
+        "schema_or_db_name": {
+          "type": "string"
+        }
+      }
+    },
+    "integrator_action": {
+      "type": "string",
+      "const": "INIT_BASELINE_AUDIT"
+    }
+  }
+}

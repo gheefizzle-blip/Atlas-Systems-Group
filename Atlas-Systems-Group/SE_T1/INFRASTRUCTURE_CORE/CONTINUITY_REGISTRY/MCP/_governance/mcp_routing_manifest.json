@@ -1,0 +1,169 @@
+{
+  "version": "SE-T1-MCP-RM-001-RevA",
+  "description": "MCP routing manifest for Spear Enterprise Tier-1. Defines trust zones, division paths, governance channels, and continuity registry locations.",
+  "root": "Z:\\SE_T1",
+
+  "trust_zones": {
+    "tier0": {
+      "description": "Infrastructure core. Direct writes by MCP only.",
+      "paths": [
+        "Z:\\SE_T1\\INFRASTRUCTURE_CORE",
+        "Z:\\SE_T1\\INFRASTRUCTURE_CORE\\MCP",
+        "Z:\\SE_T1\\INFRASTRUCTURE_CORE\\COMMS_IO",
+        "Z:\\SE_T1\\INFRASTRUCTURE_CORE\\CONTAINER_OPS",
+        "Z:\\SE_T1\\INFRASTRUCTURE_CORE\\CONTINUITY_REGISTRY",
+        "Z:\\SE_T1\\INFRASTRUCTURE_CORE\\AGENT_GOVERNANCE",
+        "Z:\\SE_T1\\INFRASTRUCTURE_CORE\\SECURITY_IAM"
+      ]
+    },
+    "tier1": {
+      "description": "All mission divisions. Controlled writes allowed.",
+      "paths": [
+        "Z:\\SE_T1\\ENERGY_DIVISION",
+        "Z:\\SE_T1\\SPACE_SYSTEMS",
+        "Z:\\SE_T1\\DIGITAL_SYSTEMS",
+        "Z:\\SE_T1\\CONSTRUCTION_CIVIL",
+        "Z:\\SE_T1\\SPECIAL_PROJECTS",
+        "Z:\\SE_T1\\ENGINEERING_RESEARCH"
+      ]
+    },
+    "tier1_5": {
+      "description": "Governance and oversight. Immutable once FINAL.",
+      "paths": [
+        "Z:\\SE_T1\\GOVERNANCE",
+        "Z:\\SE_T1\\GOVERNANCE\\SAFETY_CRITICAL",
+        "Z:\\SE_T1\\GOVERNANCE\\RELIABILITY",
+        "Z:\\SE_T1\\GOVERNANCE\\HUMAN_FACTORS",
+        "Z:\\SE_T1\\GOVERNANCE\\ATB",
+        "Z:\\SE_T1\\GOVERNANCE\\RED_TEAM",
+        "Z:\\SE_T1\\GOVERNANCE\\NASA_STD_DOCS",
+        "Z:\\SE_T1\\GOVERNANCE\\ROUTING_MEMOS",
+        "Z:\\SE_T1\\GOVERNANCE\\STRUCT_ARCHIVE"
+      ]
+    }
+  },
+
+  "continuity_registry": {
+    "base_path": "Z:\\SE_T1\\INFRASTRUCTURE_CORE\\CONTINUITY_REGISTRY\\MCP",
+    "subfolders": {
+      "_continuity": "Z:\\SE_T1\\INFRASTRUCTURE_CORE\\CONTINUITY_REGISTRY\\MCP\\_continuity",
+      "_governance": "Z:\\SE_T1\\INFRASTRUCTURE_CORE\\CONTINUITY_REGISTRY\\MCP\\_governance",
+      "reports": "Z:\\SE_T1\\INFRASTRUCTURE_CORE\\CONTINUITY_REGISTRY\\MCP\\REPORTS",
+      "cad": "Z:\\SE_T1\\INFRASTRUCTURE_CORE\\CONTINUITY_REGISTRY\\MCP\\CAD",
+      "logs": "Z:\\SE_T1\\INFRASTRUCTURE_CORE\\CONTINUITY_REGISTRY\\MCP\\LOGS",
+      "test_data": "Z:\\SE_T1\\INFRASTRUCTURE_CORE\\CONTINUITY_REGISTRY\\MCP\\TEST_DATA"
+    },
+    "hash_algorithm": "SHA-256",
+    "require_continuity_event_id": true
+  },
+
+  "divisions": {
+    "ENERGY_DIVISION": {
+      "dev": "Z:\\SE_T1\\ENERGY_DIVISION\\DEV",
+      "ops": "Z:\\SE_T1\\ENERGY_DIVISION\\OPS",
+      "default_target": "dev",
+      "description": "Autonomous House, hydrogen, solar, battery, SMR, MECSAI."
+    },
+    "SPACE_SYSTEMS": {
+      "dev": "Z:\\SE_T1\\SPACE_SYSTEMS\\DEV",
+      "ops": "Z:\\SE_T1\\SPACE_SYSTEMS\\OPS",
+      "default_target": "dev",
+      "description": "OSY, tugs, lunar base, Mars forward, ISRU, rescue systems."
+    },
+    "DIGITAL_SYSTEMS": {
+      "dev": "Z:\\SE_T1\\DIGITAL_SYSTEMS\\DEV",
+      "ops": "Z:\\SE_T1\\DIGITAL_SYSTEMS\\OPS",
+      "default_target": "dev",
+      "description": "Agent swarm, APIs, ICS security, NAS/SFTP middleware, backends."
+    },
+    "CONSTRUCTION_CIVIL": {
+      "phases": {
+        "HEBER_PHASE_1": {
+          "dev": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_1\\DEV",
+          "ops": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_1\\OPS",
+          "arch": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_1\\ARCH",
+          "struct": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_1\\STRUCT",
+          "mep": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_1\\MEP",
+          "fire": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_1\\FIRE",
+          "site": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_1\\SITE",
+          "survey": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_1\\SURVEY"
+        },
+        "HEBER_PHASE_2": {
+          "dev": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_2\\DEV",
+          "ops": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_2\\OPS",
+          "arch": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_2\\ARCH",
+          "struct": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_2\\STRUCT",
+          "mep": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_2\\MEP",
+          "fire": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_2\\FIRE",
+          "site": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_2\\SITE",
+          "survey": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_2\\SURVEY"
+        },
+        "HEBER_PHASE_3": {
+          "dev": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_3\\DEV",
+          "ops": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_3\\OPS",
+          "arch": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_3\\ARCH",
+          "struct": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_3\\STRUCT",
+          "mep": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_3\\MEP",
+          "fire": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_3\\FIRE",
+          "site": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_3\\SITE",
+          "survey": "Z:\\SE_T1\\CONSTRUCTION_CIVIL\\HEBER_PHASE_3\\SURVEY"
+        }
+      },
+      "description": "Heber campus civil, structural, fire, utilities, survey."
+    },
+    "SPECIAL_PROJECTS": {
+      "dev": "Z:\\SE_T1\\SPECIAL_PROJECTS\\DEV",
+      "ops": "Z:\\SE_T1\\SPECIAL_PROJECTS\\OPS",
+      "description": "Agent test env, SDC-COMMS, OSY expansion, tactical systems."
+    },
+    "ENGINEERING_RESEARCH": {
+      "dev": "Z:\\SE_T1\\ENGINEERING_RESEARCH\\DEV",
+      "ops": "Z:\\SE_T1\\ENGINEERING_RESEARCH\\OPS",
+      "domains": {
+        "HYDROGEN_RD": "Z:\\SE_T1\\ENGINEERING_RESEARCH\\HYDROGEN_RD",
+        "NUCLEAR_CONCEPTS": "Z:\\SE_T1\\ENGINEERING_RESEARCH\\NUCLEAR_CONCEPTS",
+        "PROPULSION_CONCEPTS": "Z:\\SE_T1\\ENGINEERING_RESEARCH\\PROPULSION_CONCEPTS",
+        "SPACE_RD": "Z:\\SE_T1\\ENGINEERING_RESEARCH\\SPACE_RD",
+        "ADV_MATERIALS": "Z:\\SE_T1\\ENGINEERING_RESEARCH\\ADV_MATERIALS",
+        "GROUND_RD": "Z:\\SE_T1\\ENGINEERING_RESEARCH\\GROUND_RD",
+        "EMERGING_TECH": "Z:\\SE_T1\\ENGINEERING_RESEARCH\\EMERGING_TECH",
+        "MULTIPHASE": "Z:\\SE_T1\\ENGINEERING_RESEARCH\\MULTIPHASE"
+      },
+      "description": "Tier-1 R and D feeding all divisions."
+    }
+  },
+
+  "governance": {
+    "safety_critical": "Z:\\SE_T1\\GOVERNANCE\\SAFETY_CRITICAL",
+    "reliability": "Z:\\SE_T1\\GOVERNANCE\\RELIABILITY",
+    "human_factors": "Z:\\SE_T1\\GOVERNANCE\\HUMAN_FACTORS",
+    "atb": "Z:\\SE_T1\\GOVERNANCE\\ATB",
+    "red_team": "Z:\\SE_T1\\GOVERNANCE\\RED_TEAM",
+    "nasa_std_docs": "Z:\\SE_T1\\GOVERNANCE\\NASA_STD_DOCS",
+    "routing_memos": "Z:\\SE_T1\\GOVERNANCE\\ROUTING_MEMOS",
+    "struct_archive": "Z:\\SE_T1\\GOVERNANCE\\STRUCT_ARCHIVE"
+  },
+
+  "rules": {
+    "default_target_for_new_artifacts": "dev",
+    "promotion_requires_atb_approval": true,
+    "safety_critical_requires_dual_signoff": true,
+    "hash_required_for_ops_and_governance": true,
+    "continuity_event_required_for_ops_and_governance": true
+  },
+
+  "sftp_mapping": {
+    "description": "How SFTP view maps to NAS paths.",
+    "root_virtual": "/mnt/HD/HD_a2/SPEAR_MCP/SE_T1",
+    "examples": {
+      "energy_dev": {
+        "virtual": "/mnt/HD/HD_a2/SPEAR_MCP/SE_T1/ENERGY_DIVISION/DEV",
+        "physical": "Z:\\SE_T1\\ENERGY_DIVISION\\DEV"
+      },
+      "mcp_vm": {
+        "virtual": "/mnt/HD/HD_a2/SPEAR_MCP/SE_T1/INFRASTRUCTURE_CORE/CONTINUITY_REGISTRY/MCP",
+        "physical": "Z:\\SE_T1\\INFRASTRUCTURE_CORE\\CONTINUITY_REGISTRY\\MCP"
+      }
+    }
+  }
+}

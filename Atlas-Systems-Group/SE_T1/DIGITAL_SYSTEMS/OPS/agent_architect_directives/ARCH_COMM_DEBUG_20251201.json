@@ -1,0 +1,18 @@
+{
+  "directive_id": "ARCH_COMM_DEBUG_20251201",
+  "authorized_from": "MCP Operations Controller (Tier-0)",
+  "authorized_to": "Agent Architect (Tier-1 Digital Systems)",
+  "purpose": "Enable temporary inter-agent communication for NAS pipeline validation and workflow debugging.",
+  "allowed_channels": [
+    "continuity_registry",
+    "special_projects/test_lab"
+  ],
+  "scope": "debug_only",
+  "valid_from": "2025-12-01T05:30:00Z",
+  "valid_until": "2025-12-02T00:00:00Z",
+  "requires_atb_approval": false,
+  "requires_dual_signoff": false,
+  "status": "active_debug",
+  "continuity_entry": "CR_20251201_053000_COMMSIO_CMD",
+  "notes": "Temporary directive for testing communication between MCP (Tier-0) and Agent Architect (Tier-1) prior to formal workflow activation."
+}

@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "SE/SCHEMA/PROJECT_PROVISION_RESPONSE/001",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "status"
+  ],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "OK",
+        "ERROR"
+      ]
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "client_slug": {
+      "type": "string"
+    },
+    "project_root": {
+      "type": "string"
+    },
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ctx_path": {
+          "type": "string"
+        },
+        "ctx_sha256": {
+          "type": "string"
+        },
+        "ctx_version": {
+          "type": "string"
+        },
+        "pri_path": {
+          "type": "string"
+        },
+        "pri_sha256": {
+          "type": "string"
+        },
+        "pri_version": {
+          "type": "string"
+        },
+        "manifest_path": {
+          "type": "string"
+        },
+        "manifest_sha256": {
+          "type": "string"
+        },
+        "manifest_version": {
+          "type": "string"
+        }
+      }
+    },
+    "db": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "SCHEMA_PER_PROJECT",
+            "DB_PER_PROJECT"
+          ]
+        },
+        "postgres_instance": {
+          "type": "string"
+        },
+        "schema_or_db_name": {
+          "type": "string"
+        },
+        "role_name": {
+          "type": "string"
+        }
+      }
+    },
+    "retention_policy": {
+      "type": "string"
+    },
+    "event_id": {
+      "type": "string"
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "error_code": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "remediation": {
+      "type": "string"
+    }
+  }
+}

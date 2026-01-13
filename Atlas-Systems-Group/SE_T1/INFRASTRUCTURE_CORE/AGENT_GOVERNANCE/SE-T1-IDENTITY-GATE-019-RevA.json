@@ -1,0 +1,51 @@
+{
+  "doc_id": "SE-T1-IDENTITY-GATE-019",
+  "revision": "A",
+  "status": "WORKING",
+  "effective_utc": "2026-01-07T08:10:00Z",
+  "purpose": "Phase 19 identity enforcement gate for Tier-1 write-capable workflows.",
+  "required_fields": [
+    "agent_id",
+    "requested_action",
+    "target_path",
+    "human_approved"
+  ],
+  "requirements": {
+    "human_approved_must_be_true_in_phase19": true,
+    "agent_id_must_exist_in_roster": true,
+    "target_path_must_be_within_agent_write_scope": true,
+    "requested_action_must_be_allowed_for_agent": true
+  },
+  "deny_rules": [
+    {
+      "id": "DENY_MISSING_AGENT_ID",
+      "condition": "agent_id is missing or empty",
+      "result": "HARD_FAIL"
+    },
+    {
+      "id": "DENY_UNKNOWN_AGENT_ID",
+      "condition": "agent_id not found in roster",
+      "result": "HARD_FAIL"
+    },
+    {
+      "id": "DENY_NOT_HUMAN_APPROVED",
+      "condition": "human_approved != true",
+      "result": "HARD_FAIL"
+    },
+    {
+      "id": "DENY_ACTION_NOT_ALLOWED",
+      "condition": "requested_action not in agent.allowed_actions",
+      "result": "HARD_FAIL"
+    },
+    {
+      "id": "DENY_PATH_OUT_OF_SCOPE",
+      "condition": "target_path not under any prefix in agent.write_scope",
+      "result": "HARD_FAIL"
+    }
+  ],
+  "notes": [
+    "This gate is enforced in code, not prompts.",
+    "Phase 20 may replace agent_id strings with UUID+keys, but must remain backward compatible.",
+    "All denials must be logged to continuity registry with reason code."
+  ]
+}

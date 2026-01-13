@@ -1,0 +1,42 @@
+{
+  "context_map_version": "20251202-B",
+  "description": "Updated NAS Filesystem Context Map with TEST_LAB exclusion.",
+  "generated_at": "2025-12-02T02:50:00Z",
+  "structure": {
+    "tier0": {
+      "INFRASTRUCTURE_CORE": {
+        "CONTINUITY_REGISTRY/MCP": {
+          "_continuity": ["MCP_Agent_State.md", "MCP_Agent_Queue.json", "memory_registry.jsonl", "continuity_hash.sha256", "Session_Log_20251201.md"],
+          "_governance": ["mcp_routing_manifest.json"],
+          "REPORTS": ["Filesystem_Inventory_20251201.md", "Startup_Briefing_20251201.md", "SE-T1-MCP-CERT-017_Phase17_RevA.pdf", "Filesystem_Integrity_20251202.md", "Governance_Continuity_CrossMap_20251202.md"],
+          "LOGS": ["memory_registry.jsonl", "filesystem_context_map.json"],
+          "CAD": [],
+          "TEST_DATA": []
+        }
+      }
+    },
+    "tier1": {
+      "CONSTRUCTION_CIVIL": ["HEBER_PHASE_1", "HEBER_PHASE_2", "HEBER_PHASE_3"],
+      "DIGITAL_SYSTEMS": ["DEV", "OPS"],
+      "ENERGY_DIVISION": ["DEV", "OPS"],
+      "SPACE_SYSTEMS": ["DEV", "OPS"],
+      "SPECIAL_PROJECTS": {
+        "DEV": {},
+        "OPS": {},
+        "TEST_LAB": {
+          "classification": "transient",
+          "governance_scope": "none",
+          "continuity_scope": "excluded"
+        }
+      },
+      "ENGINEERING_RESEARCH": ["ADV_MATERIALS", "DEV", "EMERGING_TECH", "GROUND_RD", "HYDROGEN_RD", "MULTIPHASE", "NUCLEAR_CONCEPTS", "PROPULSION_CONCEPTS", "SPACE_RD"]
+    },
+    "tier1_5": {
+      "GOVERNANCE": ["ATB", "HUMAN_FACTORS", "NASA_STD_DOCS", "RED_TEAM", "RELIABILITY", "ROUTING_MEMOS", "SAFETY_CRITICAL", "STRUCT_ARCHIVE"]
+    },
+    "heber_campus_mcp": {
+      "SYSTEMS": {"Launch_Tower": ["CAD", "LOGS", "Pod_Design", "REPORTS", "TEST_DATA", "_continuity", "_governance"]}
+    }
+  },
+  "continuity_entry": "CR_20251202_025000_CTXMAP_REV_B"
+}

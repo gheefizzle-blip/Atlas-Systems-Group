@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Heber Combined Campus</name>
+    <Placemark>
+      <name>Primary Parcel 201-02-004</name>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              -110.69923,34.55324,0
+              -110.69929,34.49533,0
+              -110.59260,34.49530,0
+              -110.59295,34.55322,0
+              -110.69923,34.55324,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Southern Campus Envelope (201-02-005 & 006)</name>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              -110.69929,34.49533,0
+              -110.69929,34.43740,0
+              -110.59260,34.43740,0
+              -110.59260,34.49530,0
+              -110.69929,34.49533,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+  </Document>
+</kml>

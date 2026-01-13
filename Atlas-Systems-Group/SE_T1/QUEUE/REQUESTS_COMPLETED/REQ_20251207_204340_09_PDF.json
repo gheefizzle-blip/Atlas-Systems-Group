@@ -1,0 +1,21 @@
+{
+  "content_encoding": "base64",
+  "request_id": "REQ_20251207_204340_09_PDF",
+  "status": "COMPLETED",
+  "operation": "WRITE",
+  "timestamp": "2025-12-07T20:43:43.6445629-07:00",
+  "content": "JVBERi0xLjQKMSAwIG9iaiA8PCAvVHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4gZW5kb2JqCjIgMCBvYmogPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFszIDAgUl0gL0NvdW50IDEgPj4gZW5kb2JqCjMgMCBvYmogPDwgL1R5cGUgL1BhZ2UgL1BhcmVudCAyIDAgUiAvTWVkaWFCb3ggWzAgMCA2MTIgNzkyXSAvQ29udGVudHMgNCAwIFIgL1Jlc291cmNlcyA8PCA+PiA+PiBlbmRvYmoKNCAwIG9iaiA8PCAvTGVuZ3RoIDQ0ID4+IHN0cmVhbQpCVCAvRjEgMTIgVGYgMTAwIDcwMCBUZCAoUGhhc2UxOSBUZXN0KSBUaiBFVAplbmRzdHJlYW0gZW5kb2JqCnhyZWYKMCA1CnRyYWlsZXIgPDwgL1NpemUgNSAvUm9vdCAxIDAgUiA+PgpzdGFydHhyZWYKMAolJUVPRg==",
+  "content_type": "binary",
+  "priority": "NORMAL",
+  "target_path": "/SE_T1/SPECIAL_PROJECTS/TEST_LAB/test_output_09.pdf",
+  "source_agent": "MULTIFILE_TEST_AGENT",
+  "completed_at": "2025-12-08T04:30:08.271Z",
+  "execution_result": {
+    "success": true,
+    "response_status": "ok",
+    "sha256": "a791f8cd11e5f050ef62c8a5ddfd5f0768cfa61c9067af1e2c197de9c73984cb",
+    "continuity_entry": "CR_20251208_043008_COMMSIO_CMD",
+    "error": null,
+    "target_path_written": "/mnt/HD/HD_a2/SPEAR_MCP/SE_T1/SPECIAL_PROJECTS/TEST_LAB/test_output_09.pdf"
+  }
+}

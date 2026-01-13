@@ -1,0 +1,80 @@
+{
+  "version": "1.0",
+  "namespace": "mecsai.env",
+  "timebase": "PTP-IEEE1588",
+  "topics": {
+    "wind": {
+      "path": "mecsai/env/wind/{level}",
+      "levels": [
+        "10m",
+        "100m",
+        "200m",
+        "500m"
+      ],
+      "rate_hz": 10,
+      "schema": {
+        "ts": "iso8601",
+        "u": "float m/s",
+        "v": "float m/s",
+        "w": "float m/s",
+        "speed": "float m/s",
+        "dir": "float deg_true",
+        "TI": "float (turbulence intensity 0-1)",
+        "qc_flags": {
+          "range_ok": "bool",
+          "spike_ok": "bool",
+          "step_ok": "bool",
+          "stuck_ok": "bool",
+          "sensor_vote_ok": "bool"
+        },
+        "sensor_id": "string"
+      }
+    },
+    "met": {
+      "path": "mecsai/env/met/{level}",
+      "levels": [
+        "2m",
+        "10m",
+        "100m",
+        "200m",
+        "500m"
+      ],
+      "rate_hz": 1,
+      "schema": {
+        "ts": "iso8601",
+        "T": "float C",
+        "RH": "float %",
+        "Td": "float C",
+        "P": "float hPa",
+        "qc_flags": {
+          "range_ok": "bool",
+          "spike_ok": "bool",
+          "step_ok": "bool",
+          "stuck_ok": "bool"
+        },
+        "sensor_id": "string"
+      }
+    },
+    "status": {
+      "path": "mecsai/env/status",
+      "rate_hz": 1,
+      "schema": {
+        "ts": "iso8601",
+        "sensor_id": "string",
+        "health": "enum[OK,WARN,FAIL]",
+        "diagnostics": "string"
+      }
+    }
+  },
+  "rules": {
+    "launch_gates": {
+      "wind_speed_max_mps": 8.94,
+      "gust_max_mps": 11.18,
+      "downwind_cone_center_deg": 60,
+      "downwind_cone_half_angle_deg": 30,
+      "direction_hold_seconds": 60,
+      "ti_max": 0.15,
+      "shear_max_s_inv": 0.02
+    }
+  }
+}

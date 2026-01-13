@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "SE/SCHEMA/PROJECT_INTAKE/001",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project_id",
+    "client_slug",
+    "project_name",
+    "engagement_type",
+    "classification"
+  ],
+  "properties": {
+    "project_id": {
+      "type": "string",
+      "pattern": "^PRJ-[A-Z0-9]+-[0-9]{4}-[0-9]{4}$",
+      "description": "Mandatory format PRJ-<CLIENT_SLUG>-<YYYY>-<NNNN>"
+    },
+    "client_slug": {
+      "type": "string",
+      "pattern": "^[A-Z0-9]+$"
+    },
+    "project_name": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 200
+    },
+    "engagement_type": {
+      "type": "string",
+      "enum": [
+        "hardware",
+        "software",
+        "hybrid",
+        "advisory",
+        "audit",
+        "product_dev"
+      ]
+    },
+    "scope_summary": {
+      "type": "string",
+      "maxLength": 4000
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "risk_class",
+        "data_sensitivity",
+        "regulatory_domains",
+        "client_audit_rights"
+      ],
+      "properties": {
+        "risk_class": {
+          "type": "string",
+          "enum": [
+            "LOW",
+            "MEDIUM",
+            "HIGH",
+            "CRITICAL"
+          ]
+        },
+        "data_sensitivity": {
+          "type": "string",
+          "enum": [
+            "PUBLIC",
+            "INTERNAL",
+            "CONFIDENTIAL",
+            "RESTRICTED"
+          ]
+        },
+        "regulatory_domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "client_audit_rights": {
+          "type": "string",
+          "enum": [
+            "YES",
+            "NO"
+          ]
+        }
+      }
+    },
+    "db_mode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "postgres_instance"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "SCHEMA_PER_PROJECT",
+            "DB_PER_PROJECT"
+          ],
+          "default": "SCHEMA_PER_PROJECT"
+        },
+        "postgres_instance": {
+          "type": "string",
+          "default": "pg-main-01"
+        }
+      }
+    },
+    "options": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "initial_retention_policy": {
+          "type": "string",
+          "enum": [
+            "STANDARD",
+            "TIGHT",
+            "CUSTOM"
+          ],
+          "default": "STANDARD"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

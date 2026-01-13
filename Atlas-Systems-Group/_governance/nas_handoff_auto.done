@@ -1,0 +1,24 @@
+{
+  "handoff": {
+    "session": "PHASE12_AUTOMATION",
+    "sender": "sdc-comms-nas-agent.cifs",
+    "recipient": "mcp-router-io",
+    "mode": "handoff",
+    "task": "audit_push",
+    "parameters": {
+      "target_path": "/app/data/tier1/_governance",
+      "include_subdirs": false,
+      "file_details": true
+    },
+    "metadata": {
+      "project": "SDC-COMMS",
+      "phase": "PHASE_12",
+      "description": "Auto-generated Phase 12 audit handoff"
+    },
+    "logging": {
+      "continuity_registry": "/app/data/tier1/_governance/continuity_registry.jsonl",
+      "file_ledger": "/app/logs/file_ledger.jsonl",
+      "cifs_audit_log": "/app/data/tier1/_governance/NF-1686-CIFS_AuditLog.MD"
+    }
+  }
+}
