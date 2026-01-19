@@ -40,6 +40,51 @@ N8N workflow automation and project working directories.
 - `AUTONOMY_TEST/` - Autonomy testing artifacts
 - N8N workflow configs (`.json` files)
 
+## Claude Atlas Virtual Memory
+
+Session continuity files for Claude agents are maintained at:
+`Z:\SE_T1\GOVERNANCE\Claude Atlas Virtual Memory\`
+
+### Session Startup
+Load these files at session start for full project context:
+1. **ATLAS_CORE_Memory_v[N].md** - Master memory document with locked parameters, governance status, deliverables, and open items
+2. **Session_[N]_Quick_Start.md** - Lightweight context loader with recent achievements and current priorities
+
+### Current State (as of Session 11)
+- **Governance**: COMPLETE
+- **Phase 3 Baseline**: LOCKED (15 GW hybrid nuclear, 100K BPD fuel, 23,040 acres)
+- **Master Engineering Bible**: COMPLETE (ASG-MEB-AGENTB-001 Rev 1.1)
+- **Document Inventory**: ~210 documents tracked
+
+### Locked Parameters (Phase 3)
+| Parameter | Value |
+|-----------|-------|
+| Power Architecture | 15 GW (8 GW LWR + 1.6 GWth HTGR + 1 GW Biomass + 5 GW Solar + 0.3 GW Peakers) |
+| Fuel Output | 100,000 BPD |
+| H₂ Demand | 5,500 t/day |
+| CO₂ Sourcing | 40,000 t/day (90% DAC / 10% Biomass) |
+| Data Centers | 960 MW |
+| Site Location | 6 mi N of Heber, AZ (23,040 acres, 6 zones) |
+
+### 11 Design Principles
+1. Safety First
+2. Reality Over Narrative
+3. Modularity Over Customization
+4. Governance Over Speed
+5. Autonomy With Hard Boundaries
+6. Server Cooling Sovereignty
+7. Nuclear Isolation (Air-gapped break tank)
+8. Pressure Hierarchy (Water > Salt + 3 bar)
+9. Fail-Safe Defaults
+10. Hardware Override (Independent of MECSAI)
+11. Multi-Function Infrastructure
+
+### Token Optimization
+The project has ~210 documents. To avoid token exhaustion:
+- Core Memory + Quick Start provide essential context
+- Load specific Bible volumes only when needed
+- Request specific sections rather than full documents
+
 ## GitHub Repository Structure
 
 ### Canonical Tier-1 Root
